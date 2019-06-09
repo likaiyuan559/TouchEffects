@@ -26,19 +26,19 @@ TouchEffects能够帮助你更快速方便的增加点击时候的效果，Touch
 
 ## 文档
 
-- [属性文档](I:\Project\TouchEffectsViewDemo\md\属性文档.md)
+- [属性文档](https://github.com/likaiyuan559/TouchEffects/blob/master/md/%E5%B1%9E%E6%80%A7%E6%96%87%E6%A1%A3.md)
 
-- [个性化设置](I:\Project\TouchEffectsViewDemo\md\属性文档.md)
+- [个性化设置](https://github.com/likaiyuan559/TouchEffects/blob/master/md/%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE.md)
 
 ## 效果演示
 
 | 缩放效果                                               | 水波纹效果                                               |
 |:--------------------------------------------------:|:---------------------------------------------------:|
-| ![](I:\Project\TouchEffectsViewDemo\gif\scale.gif) | ![](I:\Project\TouchEffectsViewDemo\gif\ripple.gif) |
+| ![](https://github.com/likaiyuan559/TouchEffects/blob/master/gif/scale.gif) | ![](https://github.com/likaiyuan559/TouchEffects/blob/master/gif/ripple.gif) |
 
 | 渐变效果                                               | 个性化设置                                          |
 |:--------------------------------------------------:|:----------------------------------------------:|
-| ![](I:\Project\TouchEffectsViewDemo\gif\state.gif) | ![](I:\Project\TouchEffectsViewDemo\gif\p.gif) |
+| ![](https://github.com/likaiyuan559/TouchEffects/blob/master/gif/state.gif) | ![](https://github.com/likaiyuan559/TouchEffects/blob/master/gif/p.gif) |
 
 ## 简单用例
 
@@ -114,6 +114,6 @@ protected void onCreate(@Nullable Bundle savedInstanceState) {
 
 ## 问题反馈
 
-如果遇到问题，请提交[Issuse]()，作者会每天都关注Github，并且会尽力解决每一个BUG，也欢迎大家能多提一些建议，多谢。
+如果遇到问题，请提交[Issuse](https://github.com/likaiyuan559/TouchEffects/issues)，作者会每天都关注Github，并且会尽力解决每一个BUG，也欢迎大家能多提一些建议，多谢。
 
 喜欢请给个Star
