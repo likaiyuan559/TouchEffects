@@ -56,7 +56,7 @@ allprojects {
 #### 2.添加依赖
 
 ```
-implementation 'com.github.User:Repo:Tag'
+implementation 'com.github.likaiyuan559:TouchEffects:0.1.0'
 ```
 
 ### 初始化设置
