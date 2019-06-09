@@ -1,1 +1,1 @@
-include ':toucheffectslib'
+include ':app', ':toucheffectslib'
