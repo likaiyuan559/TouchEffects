@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.lky.toucheffectsviewdemo.MainActivity">
+
+    <item
+        android:id="@+id/menu_none"
+        android:orderInCategory="100"
+        android:title="取消全局设置"
+        app:showAsAction="never" />
+    <item android:id="@+id/menu_scale"
+        android:orderInCategory="100"
+        android:title="缩放效果"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_ripple"
+        android:orderInCategory="100"
+        android:title="水波纹效果"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_state"
+        android:orderInCategory="100"
+        android:title="渐变效果"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_single"
+        android:orderInCategory="100"
+        android:title="个性化设置"
+        app:showAsAction="never" />
+</menu>
