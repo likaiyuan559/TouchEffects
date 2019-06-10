@@ -88,7 +88,10 @@ protected void onCreate(@Nullable Bundle savedInstanceState) {
 }
 ```
 
-
+给View设置点击事件
+```
+view.setOnClickListener(this);
+```
 
 
 
