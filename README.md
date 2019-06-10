@@ -89,16 +89,11 @@ protected void onCreate(@Nullable Bundle savedInstanceState) {
 }
 ```
 
-
-=======
-
-### 给View设置点击事件
+给View设置点击事件
 
 ```
 view.setOnClickListener(this);
 ```
-
-
 
 ## 控件支持
 
