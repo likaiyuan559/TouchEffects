@@ -56,7 +56,7 @@ allprojects {
 #### 2.添加依赖
 
 ```
-implementation 'com.github.User:Repo:Tag'
+implementation 'com.github.likaiyuan559:TouchEffects:0.1.0'
 ```
 
 ### 初始化设置
@@ -88,6 +88,17 @@ protected void onCreate(@Nullable Bundle savedInstanceState) {
 
 }
 ```
+
+
+=======
+
+### 给View设置点击事件
+
+```
+view.setOnClickListener(this);
+```
+
+
 
 ## 控件支持
 
