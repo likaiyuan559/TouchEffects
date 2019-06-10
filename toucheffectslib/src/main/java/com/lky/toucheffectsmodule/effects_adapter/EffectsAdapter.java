@@ -19,12 +19,14 @@ public abstract class EffectsAdapter {
 
 
     protected final int LONG_DURATION = 850;
+    protected final int CLICK_DURATION = 100;
     protected int mAnimationDuration = 100;
     protected Animator mEngineAnimator;
     protected Animator mExtinctAnimator;
     protected boolean isPointLeaveView;
     protected boolean isLongClick;
     protected int mViewWidth,mViewHeight;
+    protected Runnable mClickRunnable = null;
     protected Runnable mLongClickRunnable = null;
 
     public void measuredSize(int width,int height){
@@ -82,7 +84,11 @@ public abstract class EffectsAdapter {
                 break;
             case MotionEvent.ACTION_UP:
                 if(onClickListener != null && !isPointLeaveView && !isLongClick){
-                    onClickListener.onClick(view);
+                    if(mClickRunnable == null){
+                        createClick(view,onClickListener);
+                    }
+                    SingleHandler.getInstance().postDelayed(mClickRunnable,CLICK_DURATION);
+//                    onClickListener.onClick(view);
                 }
                 //不能加break
             case MotionEvent.ACTION_CANCEL:
@@ -97,6 +103,17 @@ public abstract class EffectsAdapter {
                 break;
         }
         return true;
+    }
+
+    public void createClick(View view, View.OnClickListener onClickListener){
+        mClickRunnable = new Runnable() {
+            @Override
+            public void run() {
+                if(onClickListener != null){
+                    onClickListener.onClick(view);
+                }
+            }
+        };
     }
 
     public void createLongClick(View view, View.OnLongClickListener onLongClickListener){

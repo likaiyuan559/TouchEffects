@@ -11,6 +11,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
@@ -19,18 +20,15 @@ import com.lky.toucheffectsmodule.R;
 import com.lky.toucheffectsmodule.bean.ColorBean;
 import com.lky.toucheffectsmodule.impl.AnimatorEndListener;
 
-public class TouchRippleAdapter extends EffectsAdapter {
-
+public class TouchRipple1Adapter extends EffectsAdapter {
     private final int TRANSPARENT_COLOR = 0x00000000;
     private int mPressedColor;
     private int mNormalColor;
     private int mCurrentColor;
-    private int mRippleColor;
 
     private float mRadius;
     private ColorBean mColorBean;
 
-    private float mColorValue;
     private float mCircleRadius;
     private float mTouchX,mTouchY;
     private Paint mPaint;
@@ -39,7 +37,7 @@ public class TouchRippleAdapter extends EffectsAdapter {
     private float[] mRadiusArray;
 
 
-    public TouchRippleAdapter(ColorBean colorBean) {
+    public TouchRipple1Adapter(ColorBean colorBean) {
         mColorBean = colorBean;
     }
 
@@ -51,7 +49,6 @@ public class TouchRippleAdapter extends EffectsAdapter {
         if(mNormalColor == 0){
             mNormalColor = mPressedColor;
         }
-        mRippleColor = mNormalColor;
         mRadius = ta.getDimension(R.styleable.TouchEffectsView_touch_effects_radius,0);
         if(mRadius != 0){
             mRadiusArray = new float[8];
@@ -86,17 +83,15 @@ public class TouchRippleAdapter extends EffectsAdapter {
             canvas.clipPath(mPath);
         }
         mPaint.setColor(mCurrentColor);
-        canvas.drawRoundRect(mRect,mRadius,mRadius,mPaint);
-        if(mCircleRadius != 0){
-            mPaint.setColor(mRippleColor);
-            canvas.drawCircle(mTouchX,mTouchY,mCircleRadius,mPaint);
-        }
+        canvas.drawCircle(mTouchX,mTouchY,mCircleRadius,mPaint);
     }
 
     @Override
     public boolean onTouch(View view, MotionEvent event, View.OnClickListener onClickListener,View.OnLongClickListener onLongClickListener) {
         switch (event.getAction()){
             case MotionEvent.ACTION_DOWN:
+                mCircleRadius = 0;
+                mCurrentColor = mPressedColor;
                 mTouchX = event.getX();
                 mTouchY = event.getY();
                 break;
@@ -107,21 +102,41 @@ public class TouchRippleAdapter extends EffectsAdapter {
                 }
                 break;
         }
-
         return touchView(view,event,onClickListener);
+    }
+
+
+    @Override
+    protected void engineAnimator(View view) {
+        if(mEngineAnimator != null){
+            mEngineAnimator.setDuration((long) getTimeScale(view));
+        }
+        super.engineAnimator(view);
+    }
+
+    @Override
+    protected void extinctAnimator(View view){
+        if(mExtinctAnimator == null){
+            mExtinctAnimator = createExtinctAnimator(view);
+        }
+        if(mExtinctAnimator != null){
+            if(mExtinctAnimator.isRunning()){
+                mExtinctAnimator.cancel();
+            }
+            mExtinctAnimator.start();
+        }
     }
 
     @Override
     protected Animator createEngineAnimator(View view) {
-        ArgbEvaluator argbEvaluator = new ArgbEvaluator();//渐变色计算类
-        ValueAnimator valueAnimator = ValueAnimator.ofFloat(0f,1f);
-        valueAnimator.setDuration(850);
-//                valueAnimator.setInterpolator(new DecelerateInterpolator());
+
+        ValueAnimator valueAnimator = ValueAnimator.ofFloat(0f,Math.max(view.getWidth(),view.getHeight()) * 1.42f);
+        valueAnimator.setDuration((long) getTimeScale(view));
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                mColorValue = (float) animation.getAnimatedValue();
-                mCurrentColor = (int) (argbEvaluator.evaluate(mColorValue, TRANSPARENT_COLOR, mPressedColor));
+                float value = (float) animation.getAnimatedValue();
+                mCircleRadius = value;
                 view.invalidate();
             }
         });
@@ -132,48 +147,25 @@ public class TouchRippleAdapter extends EffectsAdapter {
     protected Animator createExtinctAnimator(View view) {
         ArgbEvaluator argbEvaluator = new ArgbEvaluator();//渐变色计算类
         ValueAnimator valueAnimator;
-        if(mColorValue < 0.5f){
-            valueAnimator = ValueAnimator.ofFloat(mColorValue,0.8f,0.6f,0.4f,0.2f,0f);
-        }else{
-            valueAnimator = ValueAnimator.ofFloat(mColorValue,0f);
-        }
+        valueAnimator = ValueAnimator.ofFloat(1f,0f);
         valueAnimator.setDuration(450);
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                mColorValue = (float) animation.getAnimatedValue();
-                mCurrentColor = (int) (argbEvaluator.evaluate(mColorValue, TRANSPARENT_COLOR, mNormalColor));
+                mCurrentColor = (int) (argbEvaluator.evaluate((float)animation.getAnimatedValue(), TRANSPARENT_COLOR, mNormalColor));
                 view.invalidate();
             }
         });
-        ValueAnimator valueAnimator1 = ValueAnimator.ofFloat(0f,Math.max(view.getWidth(),view.getHeight())/1.25f);
-        valueAnimator1.setDuration(400);
-        valueAnimator1.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                float value = (float) animation.getAnimatedValue();
-                mCircleRadius = value;
-            }
-        });
-        valueAnimator1.setInterpolator(new DecelerateInterpolator());
-        valueAnimator1.addListener(new AnimatorEndListener() {
-            @Override
-            public void onAnimatorEnd(Animator animation) {
-                mCircleRadius = 0;
-                view.invalidate();
-            }
-        });
-        ValueAnimator valueAnimator2 = ValueAnimator.ofFloat(1f,0f);
-        valueAnimator2.setDuration(400);
-        valueAnimator2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                float value = (float) animation.getAnimatedValue();
-                mRippleColor = (int) (argbEvaluator.evaluate(value, TRANSPARENT_COLOR, mNormalColor));
-            }
-        });
-        AnimatorSet animatorSet = new AnimatorSet();
-        animatorSet.playTogether(valueAnimator,valueAnimator1,valueAnimator2);
-        return animatorSet;
+        return valueAnimator;
+    }
+
+    private float getTimeScale(View view){
+        float sizeX = Math.abs(mTouchX - view.getWidth()/2f);
+        float sizeY = Math.abs(mTouchY - view.getHeight()/2f);
+        float timeScale = 0f;
+        if(sizeX != 0 && sizeY != 0){
+            timeScale = Math.min(sizeX,sizeY)/(sizeX<sizeY?view.getWidth()/2f:view.getHeight()/2f);
+        }
+        return 450f - (200f * timeScale);
     }
 }

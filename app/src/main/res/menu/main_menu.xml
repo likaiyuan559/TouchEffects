@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.lky.toucheffectsviewdemo.MainActivity">
+    tools:context="com.lky.toucheffectsviewdemo.TouchEffectsMainActivity">
 
     <item
         android:id="@+id/menu_none"
@@ -19,6 +19,11 @@
         android:title="水波纹效果"
         app:showAsAction="never" />
     <item
+        android:id="@+id/menu_ripple_1"
+        android:orderInCategory="100"
+        android:title="水波纹1效果"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/menu_state"
         android:orderInCategory="100"
         android:title="渐变效果"
@@ -27,5 +32,10 @@
         android:id="@+id/menu_single"
         android:orderInCategory="100"
         android:title="个性化设置"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_list"
+        android:orderInCategory="100"
+        android:title="列表示例"
         app:showAsAction="never" />
 </menu>

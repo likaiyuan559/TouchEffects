@@ -8,18 +8,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".MyApplication"
+        android:name=".TouchEffectsApplication"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
-            android:label="全局默认属性">
+        <activity android:name=".TouchEffectsMainActivity"
+            android:label="点击特效示例">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PersonalizedSettingsActivity"
+        <activity android:name=".TouchEffectsPersonalizedSettingsActivity"
             android:label="个性化设置"/>
+        <activity android:name=".TouchEffectsListActivity"
+            android:label="列表示例"/>
     </application>
 
 </manifest>

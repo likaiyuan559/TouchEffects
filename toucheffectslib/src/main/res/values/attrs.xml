@@ -10,6 +10,7 @@
             <enum name="ripple" value="1"/>
             <enum name="state" value="2"/>
             <enum name="shake" value="3"/>
+            <enum name="ripple_1" value="4"/>
         </attr>
         <attr name="touch_effects_pressed_color" format="color"/>
         <attr name="touch_effects_normal_color" format="color"/>

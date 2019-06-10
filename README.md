@@ -32,12 +32,12 @@ TouchEffects能够帮助你更快速方便的增加点击时候的效果，Touch
 
 ## 效果演示
 
-| 缩放效果                                               | 水波纹效果                                               |
-|:--------------------------------------------------:|:---------------------------------------------------:|
+| 缩放效果                                                                        | 水波纹效果                                                                        |
+|:---------------------------------------------------------------------------:|:----------------------------------------------------------------------------:|
 | ![](https://github.com/likaiyuan559/TouchEffects/blob/master/gif/scale.gif) | ![](https://github.com/likaiyuan559/TouchEffects/blob/master/gif/ripple.gif) |
 
-| 渐变效果                                               | 个性化设置                                          |
-|:--------------------------------------------------:|:----------------------------------------------:|
+| 渐变效果                                                                        | 个性化设置                                                                   |
+|:---------------------------------------------------------------------------:|:-----------------------------------------------------------------------:|
 | ![](https://github.com/likaiyuan559/TouchEffects/blob/master/gif/state.gif) | ![](https://github.com/likaiyuan559/TouchEffects/blob/master/gif/p.gif) |
 
 ## 简单用例
@@ -68,7 +68,8 @@ public class MyApplication extends Application {
 
     static {
         TouchEffectsManager.build(TouchEffectsWholeType.SCALE)
-                .addViewType(TouchEffectsViewType.ALL);
+                .addViewType(TouchEffectsViewType.ALL)
+                .setListWholeType(TouchEffectsWholeType.RIPPLE);
     }
     ...
 
@@ -88,10 +89,6 @@ protected void onCreate(@Nullable Bundle savedInstanceState) {
 }
 ```
 
-
-
-
-
 ## 控件支持
 
 - TextView
@@ -109,8 +106,6 @@ protected void onCreate(@Nullable Bundle savedInstanceState) {
 - RelativeLayout
 
 - ConstraintLayout
-
-
 
 ## 问题反馈
 

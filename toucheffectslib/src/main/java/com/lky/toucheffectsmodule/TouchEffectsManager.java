@@ -18,12 +18,14 @@ public class TouchEffectsManager {
     public static final int RIPPLE_TYPE = 1;
     public static final int STATE_TYPE = 2;
     public static final int SHAKE_TYPE = 3;
+    public static final int RIPPLE_1_TYPE = 4;
 
     private static volatile TouchEffectsManager mInstance;
     private static TouchEffectsWholeType mTouchEffectsWholeType;
     private static HashMap<String,TouchEffectsWholeType> mViewTypes;
     private static TouchEffectsViewProxy mViewSubject;
     private static ColorBean mColorBean;
+    private static TouchEffectsWholeType mListWholeType;
 
 
     private TouchEffectsManager() {
@@ -120,6 +122,15 @@ public class TouchEffectsManager {
             mViewTypes.put(viewType,wholeType);
         }
         return mInstance;
+    }
+
+    public TouchEffectsManager setListWholeType(TouchEffectsWholeType listWholeType) {
+        mListWholeType = listWholeType;
+        return mInstance;
+    }
+
+    public static TouchEffectsWholeType getListWholeType() {
+        return mListWholeType;
     }
 
     /**

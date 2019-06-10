@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.lky.toucheffectsmodule.factory.TouchEffectsFactory;
 
-public class BaseActivity extends AppCompatActivity {
+public class TouchEffectsBaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
