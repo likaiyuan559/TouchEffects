@@ -18,6 +18,8 @@ TouchEffects能够帮助你更快速方便的增加点击时候的效果，Touch
 
 - Ripple（点击水波纹）
 
+- Ripple_1（点击水波纹1）
+
 - State（点击渐变）
 
 - Shake（触碰抖动，用于不可点击时的反馈）
