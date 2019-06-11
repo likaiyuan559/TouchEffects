@@ -69,9 +69,9 @@ implementation 'com.github.likaiyuan559:TouchEffects:0.1.1'
 public class MyApplication extends Application {
 
     static {
-        TouchEffectsManager.build(TouchEffectsWholeType.SCALE)
-                .addViewType(TouchEffectsViewType.ALL)
-                .setListWholeType(TouchEffectsWholeType.RIPPLE);
+        TouchEffectsManager.build(TouchEffectsWholeType.SCALE)//设置全局使用哪种效果
+                .addViewType(TouchEffectsViewType.ALL)//添加哪些View支持这个效果
+                .setListWholeType(TouchEffectsWholeType.RIPPLE);//为父控件为列表的情况下，设置特定效果
     }
     ...
 
