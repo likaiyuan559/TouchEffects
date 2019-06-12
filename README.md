@@ -64,7 +64,7 @@ allprojects {
 #### 2.添加依赖
 
 ```
-implementation 'com.github.likaiyuan559:TouchEffects:0.1.1'
+implementation 'com.github.likaiyuan559:TouchEffects:0.1.2'
 ```
 
 ### 初始化设置
