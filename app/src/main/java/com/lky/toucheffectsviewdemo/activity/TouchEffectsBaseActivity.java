@@ -1,4 +1,4 @@
-package com.lky.toucheffectsviewdemo;
+package com.lky.toucheffectsviewdemo.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,7 +10,11 @@ public class TouchEffectsBaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        TouchEffectsFactory.initTouchEffects(this);
+        initTouchEffects();
         super.onCreate(savedInstanceState);
+    }
+
+    protected void initTouchEffects() {
+        TouchEffectsFactory.initTouchEffects(this);
     }
 }

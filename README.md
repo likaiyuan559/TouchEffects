@@ -38,9 +38,15 @@ TouchEffects能够帮助你更快速方便的增加点击时候的效果，Touch
 |:---------------------------------------------------------------------------:|:----------------------------------------------------------------------------:|
 | ![](https://github.com/likaiyuan559/TouchEffects/blob/master/gif/scale.gif) | ![](https://github.com/likaiyuan559/TouchEffects/blob/master/gif/ripple.gif) |
 
-| 渐变效果                                                                        | 个性化设置                                                                   |
-|:---------------------------------------------------------------------------:|:-----------------------------------------------------------------------:|
-| ![](https://github.com/likaiyuan559/TouchEffects/blob/master/gif/state.gif) | ![](https://github.com/likaiyuan559/TouchEffects/blob/master/gif/p.gif) |
+| 渐变效果                                                                        | 水波纹1设置                                                                        |
+|:---------------------------------------------------------------------------:|:-----------------------------------------------------------------------------:|
+| ![](https://github.com/likaiyuan559/TouchEffects/blob/master/gif/state.gif) | ![](https://github.com/likaiyuan559/TouchEffects/blob/master/gif/ripple1.gif) |
+
+| 抖动效果                                                                        | 个性化设置                                                                              |
+|:---------------------------------------------------------------------------:|:----------------------------------------------------------------------------------:|
+| ![](https://github.com/likaiyuan559/TouchEffects/blob/master/gif/shake.gif) | ![](https://github.com/likaiyuan559/TouchEffects/blob/master/gif/personalized.gif) |
+
+
 
 ## 简单用例
 

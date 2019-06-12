@@ -1,4 +1,4 @@
-package com.lky.toucheffectsviewdemo;
+package com.lky.toucheffectsviewdemo.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.lky.toucheffectsviewdemo.R;
 
 public class TouchEffectsListActivity extends TouchEffectsBaseActivity{
 

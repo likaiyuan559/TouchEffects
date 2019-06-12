@@ -1,68 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black_10"
-    android:scrollbars="none"
-    tools:context=".TouchEffectsMainActivity">
-
-    <LinearLayout
+    android:background="@color/white"
+    tools:context=".activity.TouchEffectsMainActivity">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/touch_effects_main_recycler"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 
-        <TextView
-            android:id="@+id/my_test_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="默认效果" />
-
-        <TextView
-            android:id="@+id/my_test_txt_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawableLeft="@mipmap/ic_launcher"
-            android:drawablePadding="10dp"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="  Drawable" />
-
-        <Button
-            android:id="@+id/my_test_txt_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="默认效果" />
-
-        <ImageView
-            android:id="@+id/my_test_img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:src="@mipmap/ic_launcher" />
-
-        <LinearLayout
-            android:id="@+id/my_test_ll"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="10dp">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="LinearLayout" />
-        </LinearLayout>
-    </LinearLayout>
-
-</ScrollView>
+</FrameLayout>

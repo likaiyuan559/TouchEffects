@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:name=".TouchEffectsApplication"
         android:theme="@style/AppTheme">
-        <activity android:name=".TouchEffectsMainActivity"
+        <activity android:name=".activity.TouchEffectsMainActivity"
             android:label="点击特效示例">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,10 +18,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TouchEffectsPersonalizedSettingsActivity"
+        <activity android:name=".activity.TouchEffectsPersonalizedSettingsActivity"
             android:label="个性化设置"/>
-        <activity android:name=".TouchEffectsListActivity"
+        <activity android:name=".activity.TouchEffectsListActivity"
             android:label="列表示例"/>
+        <activity android:name=".activity.TouchEffectsScaleActivity"
+            android:label="缩放效果演示"/>
+        <activity android:name=".activity.TouchEffectsRippleActivity"
+            android:label="水波纹效果演示"/>
+        <activity android:name=".activity.TouchEffectsRipple1Activity"
+            android:label="水波纹1效果演示"/>
+        <activity android:name=".activity.TouchEffectsStateActivity"
+            android:label="渐变效果演示"/>
+        <activity android:name=".activity.TouchEffectsShakeActivity"
+            android:label="抖动效果演示"/>
     </application>
 
 </manifest>
