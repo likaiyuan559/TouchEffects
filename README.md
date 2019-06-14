@@ -123,6 +123,6 @@ view.setOnClickListener(this);
 
 ## 问题反馈
 
-如果遇到问题，请提交[Issuse](https://github.com/likaiyuan559/TouchEffects/issues)，作者会每天都关注Github，并且会尽力解决每一个BUG，也欢迎大家能多提一些建议，多谢。
+如果遇到问题，请提交[Issuse](https://github.com/likaiyuan559/TouchEffects/issues)，作者会每天都关注Github，并且会尽力解决每一个BUG，也欢迎大家能多提一些[建议](https://github.com/likaiyuan559/TouchEffects/issues/2)，多谢。
 
 喜欢请给个Star
