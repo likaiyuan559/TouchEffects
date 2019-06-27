@@ -119,8 +119,7 @@ public class TouchEffectsCreateViewPageSubject implements TouchEffectsViewSubjec
         if(adapter == null){
             return null;
         }
-
-
+        view = checkViewName(name,context,attrs,adapter);
         return view;
     }
 
