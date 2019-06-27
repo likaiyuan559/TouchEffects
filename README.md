@@ -46,8 +46,6 @@ TouchEffects能够帮助你更快速方便的增加点击时候的效果，Touch
 |:---------------------------------------------------------------------------:|:----------------------------------------------------------------------------------:|
 | ![](https://github.com/likaiyuan559/TouchEffects/blob/master/gif/shake.gif) | ![](https://github.com/likaiyuan559/TouchEffects/blob/master/gif/personalized.gif) |
 
-
-
 ## 简单用例
 
 #### 1.设置maven仓库
@@ -120,6 +118,8 @@ view.setOnClickListener(this);
 - RelativeLayout
 
 - ConstraintLayout
+
+- 增加支持AppCompat系列
 
 ## 问题反馈
 

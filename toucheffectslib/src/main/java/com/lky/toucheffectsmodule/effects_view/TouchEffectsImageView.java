@@ -45,7 +45,7 @@ public class TouchEffectsImageView extends AppCompatImageView {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if(mOnClickListener == null && mOnLongClickListener == null){
+        if(mOnClickListener == null && mOnLongClickListener == null || !isEnabled()){
             return super.onTouchEvent(event);
         }
         return mEffectsAdapter.onTouch(this,event,mOnClickListener,mOnLongClickListener);
