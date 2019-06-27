@@ -123,6 +123,20 @@ public class TouchEffectsCreateViewSubject implements TouchEffectsViewSubject {
         if(adapter == null){
             return null;
         }
+        view = checkViewName(name,context,attrs,adapter);
+        return view;
+    }
+
+    private View checkViewName(String name,Context context, AttributeSet attrs,EffectsAdapter adapter){
+        if(name.startsWith("androidx.")){
+            return checkExtendView(name,context,attrs,adapter);
+        }else{
+            return checkView(name,context,attrs,adapter);
+        }
+    }
+
+    private View checkView(String name,Context context, AttributeSet attrs,EffectsAdapter adapter){
+        View view = null;
         switch (name) {
             case "TextView":
                 view = new TouchEffectsTextView(context, attrs,adapter);
@@ -150,6 +164,34 @@ public class TouchEffectsCreateViewSubject implements TouchEffectsViewSubject {
                 break;
         }
         return view;
+    }
+
+    private View checkExtendView(String name,Context context, AttributeSet attrs,EffectsAdapter adapter){
+        if(name.contains("TextView")){
+            return new TouchEffectsTextView(context, attrs,adapter);
+        }
+        if(name.contains("Button")){
+            return new TouchEffectsButton(context, attrs,adapter);
+        }
+        if(name.contains("ImageView")){
+            return new TouchEffectsImageView(context, attrs,adapter);
+        }
+        if(name.contains("ImageButton")){
+            return new TouchEffectsImageButton(context, attrs,adapter);
+        }
+        if(name.contains("FrameLayout")){
+            return new TouchEffectsFrameLayout(context, attrs,adapter);
+        }
+        if(name.contains("LinearLayout")){
+            return new TouchEffectsLinearLayout(context, attrs,adapter);
+        }
+        if(name.contains("RelativeLayout")){
+            return new TouchEffectsRelativeLayout(context, attrs,adapter);
+        }
+        if(name.contains("ConstraintLayout")){
+            return new TouchEffectsConstraintLayout(context,attrs,adapter);
+        }
+        return null;
     }
 
     private EffectsAdapter getAdapter(TouchEffectsType type){
