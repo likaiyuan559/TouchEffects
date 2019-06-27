@@ -1,11 +1,10 @@
 package com.lky.toucheffectsmodule.types;
 
-import android.annotation.TargetApi;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.StringDef;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+
+import androidx.annotation.StringDef;
 
 @Retention(RetentionPolicy.SOURCE)
 @StringDef({TouchEffectsViewType.ALL,

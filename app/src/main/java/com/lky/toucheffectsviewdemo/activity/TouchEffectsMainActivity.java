@@ -2,22 +2,19 @@ package com.lky.toucheffectsviewdemo.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.lky.toucheffectsmodule.TouchEffectsManager;
-import com.lky.toucheffectsmodule.types.TouchEffectsViewType;
-import com.lky.toucheffectsmodule.types.TouchEffectsWholeType;
 import com.lky.toucheffectsviewdemo.R;
 import com.lky.toucheffectsviewdemo.bean.JumpBean;
 
 import java.util.ArrayList;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class TouchEffectsMainActivity extends TouchEffectsBaseActivity implements View.OnClickListener{
 
@@ -36,7 +33,7 @@ public class TouchEffectsMainActivity extends TouchEffectsBaseActivity implement
         jumpArrayList.add(new JumpBean("个性化设置示例",TouchEffectsPersonalizedSettingsActivity.class));
 
         RecyclerView recyclerView = findViewById(R.id.touch_effects_main_recycler);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this,RecyclerView.VERTICAL,false));
         RecyclerAdapter adapter = new RecyclerAdapter(jumpArrayList);
         recyclerView.setAdapter(adapter);
 

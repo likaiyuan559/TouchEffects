@@ -1,10 +1,11 @@
 package com.lky.toucheffectsviewdemo.activity;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 
 import com.lky.toucheffectsmodule.factory.TouchEffectsFactory;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class TouchEffectsBaseActivity extends AppCompatActivity {
 

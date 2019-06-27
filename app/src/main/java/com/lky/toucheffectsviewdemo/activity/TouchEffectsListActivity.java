@@ -1,15 +1,16 @@
 package com.lky.toucheffectsviewdemo.activity;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.lky.toucheffectsviewdemo.R;
+
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class TouchEffectsListActivity extends TouchEffectsBaseActivity{
 
@@ -19,7 +20,7 @@ public class TouchEffectsListActivity extends TouchEffectsBaseActivity{
         setContentView(R.layout.touch_effects_activity_list);
 
         RecyclerView recyclerView = findViewById(R.id.test_recycler_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this,RecyclerView.VERTICAL,false));
         recyclerView.setAdapter(new RecyclerViewAdapter());
     }
 

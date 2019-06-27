@@ -119,13 +119,12 @@ public class TouchEffectsCreateViewPageSubject implements TouchEffectsViewSubjec
         if(adapter == null){
             return null;
         }
-
-
+        view = checkViewName(name,context,attrs,adapter);
         return view;
     }
 
     private View checkViewName(String name,Context context, AttributeSet attrs,EffectsAdapter adapter){
-        if(name.contains("AppCompat")){
+        if(name.startsWith("androidx.")){
             return checkExtendView(name,context,attrs,adapter);
         }else{
             return checkView(name,context,attrs,adapter);

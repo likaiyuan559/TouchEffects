@@ -1,6 +1,5 @@
 package com.lky.toucheffectsmodule;
 
-import android.support.annotation.NonNull;
 
 import com.lky.toucheffectsmodule.bean.ColorBean;
 import com.lky.toucheffectsmodule.proxy.TouchEffectsCreateViewSubject;
@@ -10,6 +9,8 @@ import com.lky.toucheffectsmodule.types.TouchEffectsWholeType;
 import com.lky.toucheffectsmodule.utils.TypeUtils;
 
 import java.util.HashMap;
+
+import androidx.annotation.NonNull;
 
 public class TouchEffectsManager {
 

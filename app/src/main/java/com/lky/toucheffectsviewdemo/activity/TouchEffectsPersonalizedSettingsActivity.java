@@ -1,10 +1,11 @@
 package com.lky.toucheffectsviewdemo.activity;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.lky.toucheffectsviewdemo.R;
+
+import androidx.annotation.Nullable;
 
 public class TouchEffectsPersonalizedSettingsActivity extends TouchEffectsBaseActivity implements View.OnClickListener {
 

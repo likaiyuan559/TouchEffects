@@ -2,18 +2,20 @@ package com.lky.toucheffectsmodule.effects_view;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 
 import com.lky.toucheffectsmodule.effects_adapter.EffectsAdapter;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.ContentFrameLayout;
+
 
 /**
  * Created by lky on 2018/9/4
  */
-public class TouchEffectsFrameLayout extends FrameLayout {
+public class TouchEffectsFrameLayout extends ContentFrameLayout {
 
     private EffectsAdapter mEffectsAdapter;
 

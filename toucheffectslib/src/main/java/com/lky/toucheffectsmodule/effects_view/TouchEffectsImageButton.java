@@ -2,12 +2,13 @@ package com.lky.toucheffectsmodule.effects_view;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.AppCompatImageButton;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
 import com.lky.toucheffectsmodule.effects_adapter.EffectsAdapter;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatImageButton;
 
 public class TouchEffectsImageButton extends AppCompatImageButton {
 
@@ -21,7 +22,7 @@ public class TouchEffectsImageButton extends AppCompatImageButton {
         super(context, attrs);
     }
 
-    public TouchEffectsImageButton(Context context, @Nullable AttributeSet attrs,EffectsAdapter effectsAdapter) {
+    public TouchEffectsImageButton(Context context, @Nullable AttributeSet attrs, EffectsAdapter effectsAdapter) {
         super(context, attrs,0);
         mEffectsAdapter = effectsAdapter;
         mEffectsAdapter.initAttr(context,attrs);
