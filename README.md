@@ -61,8 +61,13 @@ allprojects {
 
 #### 2.添加依赖
 
+#### 普通版本
 ```
-implementation 'com.github.likaiyuan559:TouchEffects:0.1.2'
+implementation 'com.github.likaiyuan559:TouchEffects:v0.1.3'
+```
+#### androidx
+```
+implementation 'com.github.likaiyuan559:TouchEffects:0.2.0'
 ```
 
 ### 初始化设置
