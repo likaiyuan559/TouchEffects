@@ -115,7 +115,7 @@ public class TouchEffectsCreateViewSubject implements TouchEffectsViewSubject {
         if(TouchEffectsManager.getListWholeType() != null
             && parent != null
             && (parent instanceof ListView
-                || parent.getClass().getName().equals("android.support.v7.widget.RecyclerView"))){//父控件为列表，使用定义的类型
+                || parent.getClass().getName().contains("widget.RecyclerView"))){//父控件为列表，使用定义的类型
             adapter = getAdapter(TouchEffectsManager.getListWholeType());
         }else if(wholeType != null){
             adapter = getAdapter(wholeType);
