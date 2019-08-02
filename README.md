@@ -32,6 +32,8 @@ TouchEffects能够帮助你更快速方便的增加点击时候的效果，Touch
 
 - [个性化设置](https://github.com/likaiyuan559/TouchEffects/blob/master/md/%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE.md)
 
+- [更新日志](https://github.com/likaiyuan559/TouchEffects/blob/master/md/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97.md)
+
 ## 效果演示
 
 | 缩放效果                                                                        | 水波纹效果                                                                        |
@@ -61,7 +63,8 @@ allprojects {
 
 #### 2.添加依赖
 
-#### 普通版本
+#### ~~普通版本~~
+``
 
 ```
 implementation 'com.github.likaiyuan559:TouchEffects:v0.1.3'
@@ -70,7 +73,7 @@ implementation 'com.github.likaiyuan559:TouchEffects:v0.1.3'
 #### androidx
 
 ```
-implementation 'com.github.likaiyuan559:TouchEffects:0.2.0'
+implementation 'com.github.likaiyuan559:TouchEffects:0.3.0'
 ```
 
 ### 初始化设置
