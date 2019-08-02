@@ -15,6 +15,8 @@ import com.lky.toucheffectsmodule.effects_adapter.TouchRippleAdapter;
 import com.lky.toucheffectsmodule.effects_adapter.TouchScaleAdapter;
 import com.lky.toucheffectsmodule.effects_adapter.TouchShakeAdapter;
 import com.lky.toucheffectsmodule.effects_adapter.TouchStateAdapter;
+import com.lky.toucheffectsmodule.effects_proxy.AspectRatioEffectsProxy;
+import com.lky.toucheffectsmodule.effects_proxy.BaseEffectsProxy;
 import com.lky.toucheffectsmodule.effects_view.TouchEffectsButton;
 import com.lky.toucheffectsmodule.effects_view.TouchEffectsConstraintLayout;
 import com.lky.toucheffectsmodule.effects_view.TouchEffectsFrameLayout;
@@ -24,9 +26,11 @@ import com.lky.toucheffectsmodule.effects_view.TouchEffectsLinearLayout;
 import com.lky.toucheffectsmodule.effects_view.TouchEffectsRelativeLayout;
 import com.lky.toucheffectsmodule.effects_view.TouchEffectsTextView;
 import com.lky.toucheffectsmodule.impl.TouchEffectsViewSubject;
+import com.lky.toucheffectsmodule.types.TouchEffectsExtraType;
 import com.lky.toucheffectsmodule.types.TouchEffectsSingleType;
 import com.lky.toucheffectsmodule.types.TouchEffectsType;
 import com.lky.toucheffectsmodule.types.TouchEffectsWholeType;
+import com.lky.toucheffectsmodule.utils.TypeUtils;
 
 /**
  * 页面中单独设置Type的Subject，全局设置及列表设置无效
@@ -119,73 +123,80 @@ public class TouchEffectsCreateViewPageSubject implements TouchEffectsViewSubjec
         if(adapter == null){
             return null;
         }
-        view = checkViewName(name,context,attrs,adapter);
+        BaseEffectsProxy baseEffectsProxy;
+        if(TypeUtils.isContainsExtraType(TouchEffectsExtraType.AspectRatio)){
+            baseEffectsProxy = new AspectRatioEffectsProxy(adapter);
+        }else{
+            baseEffectsProxy = new BaseEffectsProxy(adapter);
+        }
+
+        view = checkViewName(name,context,attrs,baseEffectsProxy);
         return view;
     }
 
-    private View checkViewName(String name,Context context, AttributeSet attrs,EffectsAdapter adapter){
+    private View checkViewName(String name, Context context, AttributeSet attrs, BaseEffectsProxy effectsProxy){
         if(name.startsWith("androidx.")){
-            return checkExtendView(name,context,attrs,adapter);
+            return checkExtendView(name,context,attrs,effectsProxy);
         }else{
-            return checkView(name,context,attrs,adapter);
+            return checkView(name,context,attrs,effectsProxy);
         }
     }
 
-    private View checkView(String name,Context context, AttributeSet attrs,EffectsAdapter adapter){
+    private View checkView(String name,Context context, AttributeSet attrs,BaseEffectsProxy effectsProxy){
         View view = null;
         switch (name) {
             case "TextView":
-                view = new TouchEffectsTextView(context, attrs,adapter);
+                view = new TouchEffectsTextView(context, attrs,effectsProxy);
                 break;
             case "Button":
-                view = new TouchEffectsButton(context, attrs,adapter);
+                view = new TouchEffectsButton(context, attrs,effectsProxy);
                 break;
             case "ImageView":
-                view = new TouchEffectsImageView(context, attrs,adapter);
+                view = new TouchEffectsImageView(context, attrs,effectsProxy);
                 break;
             case "ImageButton":
-                view = new TouchEffectsImageButton(context, attrs,adapter);
+                view = new TouchEffectsImageButton(context, attrs,effectsProxy);
                 break;
             case "FrameLayout":
-                view = new TouchEffectsFrameLayout(context, attrs,adapter);
+                view = new TouchEffectsFrameLayout(context, attrs,effectsProxy);
                 break;
             case "LinearLayout":
-                view = new TouchEffectsLinearLayout(context, attrs,adapter);
+                view = new TouchEffectsLinearLayout(context, attrs,effectsProxy);
                 break;
             case "RelativeLayout":
-                view = new TouchEffectsRelativeLayout(context, attrs,adapter);
+                view = new TouchEffectsRelativeLayout(context, attrs,effectsProxy);
                 break;
             case "android.support.constraint.ConstraintLayout":
-                view = new TouchEffectsConstraintLayout(context,attrs,adapter);
+                view = new TouchEffectsConstraintLayout(context,attrs,effectsProxy);
                 break;
         }
         return view;
     }
 
-    private View checkExtendView(String name,Context context, AttributeSet attrs,EffectsAdapter adapter){
+    private View checkExtendView(String name,Context context, AttributeSet attrs,BaseEffectsProxy effectsProxy){
         if(name.contains("TextView")){
-            return new TouchEffectsTextView(context, attrs,adapter);
+            return new TouchEffectsTextView(context, attrs,effectsProxy);
         }
         if(name.contains("Button")){
-            return new TouchEffectsButton(context, attrs,adapter);
+            return new TouchEffectsButton(context, attrs,effectsProxy);
         }
         if(name.contains("ImageView")){
-            return new TouchEffectsImageView(context, attrs,adapter);
+            return new TouchEffectsImageView(context, attrs,effectsProxy);
         }
         if(name.contains("ImageButton")){
-            return new TouchEffectsImageButton(context, attrs,adapter);
+            return new TouchEffectsImageButton(context, attrs,effectsProxy);
         }
         if(name.contains("FrameLayout")){
-            return new TouchEffectsFrameLayout(context, attrs,adapter);
+            return new TouchEffectsFrameLayout(context, attrs,effectsProxy);
         }
         if(name.contains("LinearLayout")){
-            return new TouchEffectsLinearLayout(context, attrs,adapter);
+            return new TouchEffectsLinearLayout(context, attrs,effectsProxy);
         }
         if(name.contains("RelativeLayout")){
-            return new TouchEffectsRelativeLayout(context, attrs,adapter);
+            return new TouchEffectsRelativeLayout(context, attrs,effectsProxy);
         }
         if(name.contains("ConstraintLayout")){
-            return new TouchEffectsConstraintLayout(context,attrs,adapter);
+            return new TouchEffectsConstraintLayout(context,attrs,effectsProxy);
         }
         return null;
     }

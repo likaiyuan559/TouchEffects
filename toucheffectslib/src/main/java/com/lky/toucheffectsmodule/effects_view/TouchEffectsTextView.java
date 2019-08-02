@@ -6,6 +6,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 
 import com.lky.toucheffectsmodule.effects_adapter.EffectsAdapter;
+import com.lky.toucheffectsmodule.effects_proxy.BaseEffectsProxy;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
@@ -16,7 +17,7 @@ import androidx.appcompat.widget.AppCompatTextView;
  */
 public class TouchEffectsTextView extends AppCompatTextView {
 
-    private EffectsAdapter mEffectsAdapter;
+    private BaseEffectsProxy mEffectsProxy;
 
     public TouchEffectsTextView(Context context) {
         this(context,null);
@@ -26,21 +27,21 @@ public class TouchEffectsTextView extends AppCompatTextView {
         super(context, attrs);
     }
 
-    public TouchEffectsTextView(Context context, @Nullable AttributeSet attrs,EffectsAdapter effectsAdapter) {
+    public TouchEffectsTextView(Context context, @Nullable AttributeSet attrs, BaseEffectsProxy effectsProxy) {
         super(context, attrs,0);
-        mEffectsAdapter = effectsAdapter;
-        mEffectsAdapter.initAttr(context,attrs);
+        mEffectsProxy = effectsProxy;
+        mEffectsProxy.initAttr(context,attrs);
 
     }
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        mEffectsAdapter.measuredSize(getMeasuredWidth(),getMeasuredHeight());
+        mEffectsProxy.measuredSize(getMeasuredWidth(),getMeasuredHeight());
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
-        mEffectsAdapter.runAnimator(this,canvas);
+        mEffectsProxy.getAdapter().runAnimator(this,canvas);
         super.onDraw(canvas);
     }
 
@@ -49,7 +50,7 @@ public class TouchEffectsTextView extends AppCompatTextView {
         if(mOnClickListener == null && mOnLongClickListener == null || !isEnabled()){
             return super.onTouchEvent(event);
         }
-        return mEffectsAdapter.onTouch(this,event,mOnClickListener,mOnLongClickListener);
+        return mEffectsProxy.getAdapter().onTouch(this,event,mOnClickListener,mOnLongClickListener);
     }
 
 
@@ -64,7 +65,7 @@ public class TouchEffectsTextView extends AppCompatTextView {
     public void setOnLongClickListener(OnLongClickListener onLongClickListener) {
         mOnLongClickListener = onLongClickListener;
         if(mOnLongClickListener != null){
-            mEffectsAdapter.createLongClick(this,mOnLongClickListener);
+            mEffectsProxy.getAdapter().createLongClick(this,mOnLongClickListener);
         }
     }
 

@@ -8,13 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.lky.toucheffectsviewdemo.R;
 import com.lky.toucheffectsviewdemo.bean.JumpBean;
 
 import java.util.ArrayList;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 public class TouchEffectsMainActivity extends TouchEffectsBaseActivity implements View.OnClickListener{
 

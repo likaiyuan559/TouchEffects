@@ -11,6 +11,8 @@ public class TouchEffectsApplication extends Application {
     static {
         TouchEffectsManager.build(TouchEffectsWholeType.SCALE)
                 .addViewType(TouchEffectsViewType.ALL)
-                .setListWholeType(TouchEffectsWholeType.RIPPLE);
+                .setListWholeType(TouchEffectsWholeType.RIPPLE)
+                .setAspectRatioType(4f,TouchEffectsWholeType.RIPPLE);//宽高比大于4时启动水波纹
+
     }
 }

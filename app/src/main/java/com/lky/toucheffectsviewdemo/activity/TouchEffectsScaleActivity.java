@@ -27,10 +27,10 @@ public class TouchEffectsScaleActivity extends TouchEffectsBaseActivity implemen
 
     }
 
-    @Override
-    protected void initTouchEffects() {
-        TouchEffectsFactory.initTouchEffects(this,TouchEffectsWholeType.SCALE);
-    }
+//    @Override
+//    protected void initTouchEffects() {
+//        TouchEffectsFactory.initTouchEffects(this,TouchEffectsWholeType.SCALE);
+//    }
 
     @Override
     public void onClick(View v) {

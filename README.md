@@ -62,10 +62,13 @@ allprojects {
 #### 2.添加依赖
 
 #### 普通版本
+
 ```
 implementation 'com.github.likaiyuan559:TouchEffects:v0.1.3'
 ```
+
 #### androidx
+
 ```
 implementation 'com.github.likaiyuan559:TouchEffects:0.2.0'
 ```
@@ -81,6 +84,7 @@ public class MyApplication extends Application {
         TouchEffectsManager.build(TouchEffectsWholeType.SCALE)//设置全局使用哪种效果
                 .addViewType(TouchEffectsViewType.ALL)//添加哪些View支持这个效果
                 .setListWholeType(TouchEffectsWholeType.RIPPLE);//为父控件为列表的情况下，设置特定效果
+                                .setAspectRatioType(4f,TouchEffectsWholeType.RIPPLE);//宽高比大于4时启动水波纹
     }
     ...
 
