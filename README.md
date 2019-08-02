@@ -64,7 +64,7 @@ allprojects {
 #### 2.添加依赖
 
 #### ~~普通版本~~
-``
+`目前已经全面转为androidx，普通版本将不再维护，请各位尽快使用androidx哦`
 
 ```
 implementation 'com.github.likaiyuan559:TouchEffects:v0.1.3'
