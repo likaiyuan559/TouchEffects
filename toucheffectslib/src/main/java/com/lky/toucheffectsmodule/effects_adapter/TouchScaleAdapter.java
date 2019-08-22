@@ -37,6 +37,11 @@ public class TouchScaleAdapter extends EffectsAdapter {
     }
 
     @Override
+    public void drawForeground(View view, Canvas canvas) {
+
+    }
+
+    @Override
     public boolean onTouch(View view, MotionEvent motionEvent, View.OnClickListener onClickListener, View.OnLongClickListener onLongClickListener) {
         return touchView(view,motionEvent,onClickListener);
     }

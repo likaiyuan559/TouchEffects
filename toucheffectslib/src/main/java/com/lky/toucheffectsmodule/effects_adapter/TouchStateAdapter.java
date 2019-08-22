@@ -55,6 +55,11 @@ public class TouchStateAdapter extends EffectsAdapter {
 
     @Override
     public void runAnimator(View view, Canvas canvas) {
+
+    }
+
+    @Override
+    public void drawForeground(View view, Canvas canvas) {
         mPaint.setColor(mCurrentColor);
 //        mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
         canvas.drawRoundRect(mRect,mRadius,mRadius,mPaint);

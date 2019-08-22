@@ -12,8 +12,11 @@ import com.lky.toucheffectsmodule.utils.SingleHandler;
 public abstract class EffectsAdapter {
 
     public abstract void initAttr(Context context, AttributeSet attrs);
-    public abstract void runAnimator(View view,Canvas canvas);
-    public abstract boolean onTouch(View view, MotionEvent motionEvent, View.OnClickListener onClickListener,View.OnLongClickListener onLongClickListener);
+    public abstract void runAnimator(View view, Canvas canvas);
+    public abstract void drawForeground(View view, Canvas canvas);
+    public abstract boolean onTouch(View view, MotionEvent motionEvent,
+                                    View.OnClickListener onClickListener,
+                                    View.OnLongClickListener onLongClickListener);
     protected abstract Animator createEngineAnimator(View view);
     protected abstract Animator createExtinctAnimator(View view);
 

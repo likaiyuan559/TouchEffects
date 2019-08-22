@@ -11,7 +11,7 @@
         android:gravity="center_horizontal">
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/touch_effects_sample_txt"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
             android:padding="10dp"/>

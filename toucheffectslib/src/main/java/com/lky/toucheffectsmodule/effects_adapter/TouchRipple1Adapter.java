@@ -79,6 +79,11 @@ public class TouchRipple1Adapter extends EffectsAdapter {
 
     @Override
     public void runAnimator(View view, Canvas canvas) {
+
+    }
+
+    @Override
+    public void drawForeground(View view, Canvas canvas) {
         if(mPath != null){
             canvas.clipPath(mPath);
         }

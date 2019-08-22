@@ -43,6 +43,12 @@ public class TouchEffectsConstraintLayout extends ConstraintLayout {
     }
 
     @Override
+    public void onDrawForeground(Canvas canvas) {
+        super.onDrawForeground(canvas);
+        mEffectsProxy.getAdapter().drawForeground(this,canvas);
+    }
+
+    @Override
     public boolean onTouchEvent(MotionEvent event) {
         if(mOnClickListener == null && mOnLongClickListener == null || !isEnabled()){
             return super.onTouchEvent(event);
