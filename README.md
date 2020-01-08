@@ -73,7 +73,7 @@ implementation 'com.github.likaiyuan559:TouchEffects:v0.1.3'
 #### androidx
 
 ```
-implementation 'com.github.likaiyuan559:TouchEffects:0.3.0'
+implementation 'com.github.likaiyuan559:TouchEffects:0.4.0'
 ```
 
 ### 初始化设置
