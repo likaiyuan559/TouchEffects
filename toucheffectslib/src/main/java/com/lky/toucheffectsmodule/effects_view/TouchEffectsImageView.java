@@ -2,6 +2,7 @@ package com.lky.toucheffectsmodule.effects_view;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
@@ -43,6 +44,14 @@ public class TouchEffectsImageView extends AppCompatImageView {
     protected void onDraw(Canvas canvas) {
         mEffectsProxy.getAdapter().runAnimator(this,canvas);
         super.onDraw(canvas);
+    }
+
+    @Override
+    protected void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M){
+            mEffectsProxy.getAdapter().dispatchDraw(this,canvas);
+        }
     }
 
     @Override

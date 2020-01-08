@@ -37,6 +37,11 @@ public class TouchScaleAdapter extends EffectsAdapter {
     }
 
     @Override
+    public void dispatchDraw(View view, Canvas canvas) {
+
+    }
+
+    @Override
     public void drawForeground(View view, Canvas canvas) {
 
     }

@@ -13,6 +13,7 @@ public abstract class EffectsAdapter {
 
     public abstract void initAttr(Context context, AttributeSet attrs);
     public abstract void runAnimator(View view, Canvas canvas);
+    public abstract void dispatchDraw(View view, Canvas canvas);
     public abstract void drawForeground(View view, Canvas canvas);
     public abstract boolean onTouch(View view, MotionEvent motionEvent,
                                     View.OnClickListener onClickListener,
@@ -109,23 +110,17 @@ public abstract class EffectsAdapter {
     }
 
     public void createClick(View view, View.OnClickListener onClickListener){
-        mClickRunnable = new Runnable() {
-            @Override
-            public void run() {
-                if(onClickListener != null){
-                    onClickListener.onClick(view);
-                }
+        mClickRunnable = () -> {
+            if(onClickListener != null){
+                onClickListener.onClick(view);
             }
         };
     }
 
     public void createLongClick(View view, View.OnLongClickListener onLongClickListener){
-        mLongClickRunnable = new Runnable() {
-            @Override
-            public void run() {
-                if(onLongClickListener != null){
-                    isLongClick = onLongClickListener.onLongClick(view);
-                }
+        mLongClickRunnable = () -> {
+            if(onLongClickListener != null){
+                isLongClick = onLongClickListener.onLongClick(view);
             }
         };
     }

@@ -86,7 +86,7 @@ public class TouchRippleAdapter extends EffectsAdapter {
     }
 
     @Override
-    public void drawForeground(View view, Canvas canvas) {
+    public void dispatchDraw(View view, Canvas canvas) {
         if(mPath != null){
             canvas.clipPath(mPath);
         }
@@ -96,6 +96,11 @@ public class TouchRippleAdapter extends EffectsAdapter {
             mPaint.setColor(mRippleColor);
             canvas.drawCircle(mTouchX,mTouchY,mCircleRadius,mPaint);
         }
+    }
+
+    @Override
+    public void drawForeground(View view, Canvas canvas) {
+        dispatchDraw(view,canvas);
     }
 
     @Override
